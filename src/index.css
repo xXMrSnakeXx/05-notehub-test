@@ -1,0 +1,19 @@
+@import 'modern-normalize/modern-normalize.css';
+
+:root {
+  --bg: #0b0b0f;
+  --text: #f5f7fb;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+}
