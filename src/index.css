@@ -1,10 +1,5 @@
 @import 'modern-normalize/modern-normalize.css';
 
-:root {
-  --bg: #0b0b0f;
-  --text: #f5f7fb;
-}
-
 html,
 body,
 #root {
@@ -12,8 +7,12 @@ body,
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
+  background-color: #f5f7fb;
+  color: #0b0b0f;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
+}
+
+* {
+  box-sizing: border-box;
 }
