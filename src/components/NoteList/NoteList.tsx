@@ -25,6 +25,7 @@ export default function NoteList({ notes, onNoteDeleted }: NoteListProps) {
           <p className={css.content}>{note.content}</p>
           <div className={css.footer}>
             <span className={css.tag}>{note.tag}</span>
+            
             <button
               className={css.button}
               onClick={() => handleDelete(note._id)}

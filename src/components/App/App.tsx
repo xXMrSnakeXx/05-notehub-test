@@ -23,13 +23,12 @@ export default function App() {
   });
 
   const handleNoteCreated = () => {
-  queryClient.invalidateQueries({ queryKey: ['notes'] as const });
-};
+    queryClient.invalidateQueries({ queryKey: ['notes'] });
+  };
 
-const handleNoteDeleted = () => {
-  queryClient.invalidateQueries({ queryKey: ['notes'] as const });
-};
-
+  const handleNoteDeleted = () => {
+    queryClient.invalidateQueries({ queryKey: ['notes'] });
+  };
 
   return (
     <div className={css.app}>
@@ -45,23 +44,13 @@ const handleNoteDeleted = () => {
         <button className={css.button} onClick={() => setIsModalOpen(true)}>
           Create note +
         </button>
-        </header>
-
+      </header>
 
       {isLoading && <p>Loading notes...</p>}
       {isError && <p>Error loading notes</p>}
 
       {data && data.data && data.data.length > 0 && (
         <NoteList notes={data.data} onNoteDeleted={handleNoteDeleted} />
-      )}
-
-
-      {data?.totalPages && data.totalPages > 1 && (
-        <Pagination
-          currentPage={page}
-          totalPages={data.totalPages}
-          onPageChange={setPage}
-        />
       )}
 
       {isModalOpen && (
