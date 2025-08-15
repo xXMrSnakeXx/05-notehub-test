@@ -35,10 +35,18 @@ const handleNoteDeleted = () => {
     <div className={css.app}>
       <header className={css.toolbar}>
         <SearchBox value={search} onChange={setSearch} />
+        {data?.totalPages && data.totalPages > 1 && (
+          <Pagination
+            currentPage={page}
+            totalPages={data.totalPages}
+            onPageChange={setPage}
+          />
+        )}
         <button className={css.button} onClick={() => setIsModalOpen(true)}>
           Create note +
         </button>
-      </header>
+        </header>
+
 
       {isLoading && <p>Loading notes...</p>}
       {isError && <p>Error loading notes</p>}
